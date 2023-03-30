@@ -17,7 +17,7 @@
     >
         {% for pu in pus %}
         {% if pu.polling_unit_number%}
-        <a href="{{ url_for('main.display_pu_result', id=pu.uniqueid) }}" class="btn btn-success py-3 px-1 m-1" style="width: 6.1rem;">{{ pu.polling_unit_number }}</a>
+        <a href="{{ url_for('main.display_pu_result', id=pu.uniqueid) }}" class="btn btn-success py-4 m-1" style="width: 6rem;">{{ pu.polling_unit_number }}</a>
         {% endif %}
         {% endfor %}
     </div>
