@@ -11,20 +11,20 @@
         {% endfor %}
     </select>
     <br> -->
-    <label for="" class="text-white fw-bold py-1 h5">PU number</label>
+    <label for="" class="text-white fw-bold py-1 text-center">PU number</label>
     <input type="text" name="pu" class="form-control py-2" placeholder="Enter PU number">
     <br>
 
-    <label for="" class="text-white fw-bold py-1 h5">Entered by</label>
+    <label for="" class="text-white fw-bold py-1 text-center">Entered by</label>
     <input type="text" name="user" class="form-control py-2" placeholder="Enter your name">
     <br> <br>
     {% for party in parties %}
-    <div class="d-flex justify-content-between align-items-center">
-        <span class="text-white fw-bold h5">{{party.partyname}}</span>
+    <div class="d-flex justify-content-between align-items-center flex-column">
+        <span class="text-white fw-bold">{{party.partyname}}</span>
         <span><input type="text" name="{{party.partyname}}" id="" class="form-control w-100" placeholder="Enter {{party.partyname}}'s scores"></span>
     </div> <br>
     {% endfor %}
     <br>
-    <input type="submit" value="Submit" class="btn btn-warning w-25 m-auto">
+    <input type="submit" value="Submit" class="btn btn-warning m-auto" >
 </form>
 {% endblock content %}

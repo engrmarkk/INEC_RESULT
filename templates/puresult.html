@@ -8,13 +8,16 @@
 </form>
 
 {% if not n %}
-    <div class="w-100" style="display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    ">
+    <div class="w-100 m-auto"
+    style="
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    "
+    >
         {% for pu in pus %}
         {% if pu.polling_unit_number%}
-        <a href="{{ url_for('main.display_pu_result', id=pu.uniqueid) }}" class="btn btn-success p-3">{{ pu.polling_unit_number }}</a>
+        <a href="{{ url_for('main.display_pu_result', id=pu.uniqueid) }}" class="btn btn-success py-4 m-1" style="width: 6rem;">{{ pu.polling_unit_number }}</a>
         {% endif %}
         {% endfor %}
     </div>
