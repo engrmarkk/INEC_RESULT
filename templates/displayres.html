@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="m-auto" style="max-width: 600px;">
+        <table class="table table-bordered table-sm table-responsive">
+            <h5 class="lead fw-bold"><span class="badge bg-success"> Polling Unit Name:</span> {{ pu.polling_unit_name.upper() }}</h5>
+            <tr>
+                <th class="text-center bg-success text-white">Party</th>
+                <th class="text-center bg-success text-white">Score</th>
+            </tr>
+            {% for result in pu_result %}
+            <tr>
+                <td class="text-center fw-bold">{{ result.party_abbreviation }}</td>
+                <td class="text-center fw-bold">{{ result.party_score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock content %}

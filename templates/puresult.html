@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="post" class="mb-4 card p-5 bg-info m-auto" style="max-width: 700px;">
+    <label for="" class="h6 text-dark">Search polling unit</label>
+    <input type="search" name="search" id="" class="form-control" placeholder="Enter polling unit number">
+</form>
+
+{% if not n %}
+    <div class="w-100" style="display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    ">
+        {% for pu in pus %}
+        {% if pu.polling_unit_number%}
+        <a href="{{ url_for('main.display_pu_result', id=pu.uniqueid) }}" class="btn btn-success p-3">{{ pu.polling_unit_number }}</a>
+        {% endif %}
+        {% endfor %}
+    </div>
+{% else %}
+<div class="d-flex flex-column m-auto align-items-center w-100 justify-content-center">
+    <!-- <h6>Polling Unit found, click to see result</h6> <br> -->
+    <a href="{{ url_for('main.display_pu_result', id=pus_.uniqueid) }}" class="btn btn-success p-4">{{ number }}</a>
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="m-auto" style="max-width: 600px;">
+        <form action="" method="post" class="form-group">
+            <h6 class="badge bg-success">SEE TOTAL RESULT OF ALL PUs OF A LGA</h6>
+            <select name="result" id="" class="form-control mb-3">
+                {% for lg in lga %}
+                <option value="{{ lg.lga_name.title() }}">{{ lg.lga_name.title() }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Results" class="btn btn-success form-control">
+        </form>
+    </div>
+
+    {% if n %}
+    <div class="m-auto mt-5" style="max-width: 600px;">
+        <h6 class="lead fw-bold"><span class="badge bg-success">LGA : </span> {{ lg_name }}</h6>
+        <table class="table table-bordered table-sm table-responsive">
+            <tr>
+                <th class="text-center bg-success text-white">PDP</th>
+                <th class="text-center bg-success text-white">DPP</th>
+                <th class="text-center bg-success text-white">ACN</th>
+                <th class="text-center bg-success text-white">PPA</th>
+                <th class="text-center bg-success text-white">CDC</th>
+                <th class="text-center bg-success text-white">JP</th>
+                <th class="text-center bg-success text-white">ANPP</th>
+                <th class="text-center bg-success text-white">LABOUR</th>
+                <th class="text-center bg-success text-white">CPP</th>
+            </tr>
+            <tr>
+                <td class="text-center fw-bold">{{PDP}}</td>
+                <td class="text-center fw-bold">{{DPP}}</td>
+                <td class="text-center fw-bold">{{ACN}}</td>
+                <td class="text-center fw-bold">{{PPA}}</td>
+                <td class="text-center fw-bold">{{CDC}}</td>
+                <td class="text-center fw-bold">{{JP}}</td>
+                <td class="text-center fw-bold">{{ANPP}}</td>
+                <td class="text-center fw-bold">{{LABOUR}}</td>
+                <td class="text-center fw-bold">{{CPP}}</td>
+            </tr>
+        </table>
+    </div>
+    {% endif %}
+{% endblock content %}

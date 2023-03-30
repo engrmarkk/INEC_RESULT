@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="" method="post" class="mb-4 card bg-success m-auto" style="max-width: 700px; padding: 2rem;">
+    <h3 class="text-white text-center mb-4">Enter Details</h3>
+    <!-- <label for="" class="text-white fw-bold py-1">LGA</label>
+    <select name="lga" id="" class="form-control">
+        {% for lga in lgas %}
+        <option value="{{lga.lga_name}}">{{lga.lga_name}}</option>
+        {% endfor %}
+    </select>
+    <br> -->
+    <label for="" class="text-white fw-bold py-1 h5">PU number</label>
+    <input type="text" name="pu" class="form-control py-2" placeholder="Enter PU number">
+    <br>
+
+    <label for="" class="text-white fw-bold py-1 h5">Entered by</label>
+    <input type="text" name="user" class="form-control py-2" placeholder="Enter your name">
+    <br> <br>
+    {% for party in parties %}
+    <div class="d-flex justify-content-between align-items-center">
+        <span class="text-white fw-bold h5">{{party.partyname}}</span>
+        <span><input type="text" name="{{party.partyname}}" id="" class="form-control w-100" placeholder="Enter {{party.partyname}}'s scores"></span>
+    </div> <br>
+    {% endfor %}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-warning w-25 m-auto">
+</form>
+{% endblock content %}
